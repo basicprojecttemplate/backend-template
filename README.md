@@ -1,2 +1,2 @@
 # backend-template
-Simple Spring Boot Backend Template
+Simple Spring Boot and Python based Backend Template
