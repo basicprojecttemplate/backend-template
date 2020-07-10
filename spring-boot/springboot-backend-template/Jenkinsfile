@@ -11,6 +11,7 @@ pipeline {
       steps {
         git 'https://github.com/basicprojecttemplate/backend-template.git'
         sh """
+        	echo "Vishwa -- Cloning Git"
 			ls
 			pwd
 			ls -ltr
@@ -21,9 +22,24 @@ pipeline {
     
     stage('Building image') {
       steps{
+		sh """
+			echo "Vishwa -- Building image stage->steps"
+			ls
+			pwd
+			ls -ltr
+			hostname
+		"""
         script {
+			sh """
+				echo "Vishwa -- Building image stage->steps-> script"
+				ls
+				pwd
+				ls -ltr
+				hostname
+			"""
           dir('./backend-template/spring-boot/springboot-backend-template') {
 			sh """
+				echo "Vishwa -- Building image stage->steps-> script->dir"
 				ls
 				pwd
 				ls -ltr
