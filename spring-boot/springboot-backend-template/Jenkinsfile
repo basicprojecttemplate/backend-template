@@ -10,41 +10,13 @@ pipeline {
     stage('Cloning Git') {
       steps {
         git 'https://github.com/basicprojecttemplate/backend-template.git'
-        sh """
-        	echo "Vishwa -- Cloning Git"
-			ls ./spring-boot/springboot-backend-template/
-			pwd
-			ls -ltr
-			hostname
-		"""
       }
     }
     
     stage('Building image') {
       steps{
-		sh """
-			echo "Vishwa -- Building image stage->steps"
-			ls ./spring-boot/springboot-backend-template/
-			pwd
-			ls -ltr
-			hostname
-		"""
         script {
-			sh """
-				echo "Vishwa -- Building image stage->steps-> script"
-				ls ./spring-boot/springboot-backend-template/
-				pwd
-				ls -ltr
-				hostname
-			"""
           dir('./spring-boot/springboot-backend-template') {
-			sh """
-				echo "Vishwa -- Building image stage->steps-> script->dir"
-				ls
-				pwd
-				ls -ltr
-				hostname
-			"""
           	dockerImage = docker.build registry + ":$BUILD_NUMBER"
           }
         }
