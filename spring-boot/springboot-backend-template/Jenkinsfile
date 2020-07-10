@@ -24,7 +24,7 @@ pipeline {
       steps{
 		sh """
 			echo "Vishwa -- Building image stage->steps"
-			ls
+			ls ./spring-boot/springboot-backend-template/
 			pwd
 			ls -ltr
 			hostname
@@ -32,7 +32,7 @@ pipeline {
         script {
 			sh """
 				echo "Vishwa -- Building image stage->steps-> script"
-				ls
+				ls ./spring-boot/springboot-backend-template/
 				pwd
 				ls -ltr
 				hostname
