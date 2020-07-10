@@ -14,11 +14,8 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          echo "pwd: ${pwd()}"
           dir('./backend-template/spring-boot/springboot-backend-template'){
-            sh "$PWD"
           }
-          echo "pwd: ${pwd()}"
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
