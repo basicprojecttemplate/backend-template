@@ -15,7 +15,12 @@ pipeline {
       steps{
         script {
           dir('./backend-template/spring-boot/springboot-backend-template') {
-            echo ${env.WORKSPACE}
+			def files = findFiles() 
+   			files.each{ f -> 
+      			if(f.directory) {
+        		echo "This is directory: ${f.name} "
+      			}
+   			}
           	dockerImage = docker.build registry + ":$BUILD_NUMBER"
           }
         }
