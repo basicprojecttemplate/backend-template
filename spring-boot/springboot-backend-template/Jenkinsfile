@@ -14,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          sh "$PWD"
+          echo "frontend: ${pwd()}"
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
