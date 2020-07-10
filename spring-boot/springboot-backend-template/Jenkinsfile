@@ -17,6 +17,9 @@ pipeline {
           dir('./backend-template/spring-boot/springboot-backend-template') {
 			sh """
 				ls
+				pwd
+				ls -ltr
+				hostname
 			"""
           	dockerImage = docker.build registry + ":$BUILD_NUMBER"
           }
