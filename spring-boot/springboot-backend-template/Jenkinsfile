@@ -16,6 +16,8 @@ pipeline {
     stage('Building image') {
       steps{
         script {
+          mvn -version
+          mvn clean package
           dir('./spring-boot/springboot-backend-template') {
           	dockerImage = docker.build registry + ":$BUILD_NUMBER"
           }
