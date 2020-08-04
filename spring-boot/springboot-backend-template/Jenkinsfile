@@ -7,11 +7,11 @@ pipeline {
   agent any
   stages {
      
-    stage('Cloning Git') {
-      steps {
-        git 'https://github.com/basicprojecttemplate/backend-template.git'
-      }
-    }
+ //   stage('Cloning Git') {
+ //     steps {
+ //      git 'https://github.com/basicprojecttemplate/backend-template.git'
+ //     }
+ //   }
     
     stage('Building image') {
       steps{
