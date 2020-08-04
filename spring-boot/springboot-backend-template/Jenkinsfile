@@ -6,14 +6,18 @@ pipeline {
   }
   agent any
   stages {
-      
+     
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/basicprojecttemplate/backend-template.git'
+      }
+    }
+    
     stage('Building image') {
       steps{
         script {
           dir('./spring-boot/springboot-backend-template') {
-            mvn -version
-            mvn clean package
-          	// dockerImage = docker.build registry + ":$BUILD_NUMBER"
+            dockerImage = docker.build registry + ":$BUILD_NUMBER"
           }
         }
       }
