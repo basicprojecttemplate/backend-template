@@ -16,7 +16,6 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<start-class>com.basicprojecttemplate.template.springbootbackendtemplate</start-class>
 	</properties>
 
 	<dependencies>
